@@ -47,7 +47,25 @@
             [arguments]: 명령어에 대한 추가 정보나 대상 (예: 파일 경로, 메시지 등)
       -->
 
-
+   <!-- 
+      git 명령어
+            git init                  : 새로운 Git 저장소 초기화
+            git clone 주소url          : 원격 저장소 복제
+            git add 파일명.txt         : 파일을 스테이징 영역에 추가
+            git commit -m "수정내용"   : 커밋 메시지와 함께 변경 사항 커밋
+         
+            git log                   : 커밋 이력 조회
+            git diff                  : 변경 사항 비교
+            git status                : 현재 상태 확인
+            git push <remote> <branch>: 원격 저장소에 변경 사항 푸시
+            git pull <remote> <branch>: 원격 저장소에서 변경 사항 가져오기
+            git branch                : 브랜치 목록 확인 및 생성
+            git merge <branch>        : 다른 브랜치와 병합
+            git rebase <branch>       : 브랜치의 커밋을 재정렬
+            git reset <commit>        : 커밋 되돌리기
+            git tag <tag>             : 특정 커밋에 태그 추가
+            git echo
+      -->
    <h2>gitdml 추적(track)과 저장소 저장(commit)</h2>
    <div></div>
 
@@ -61,32 +79,37 @@
    이 명령어는 현재 디렉토리에 .git이라는 숨김 폴더를 생성하여 Git 저장소로 설정합니다.
 
 
+
    2. Git 저장소 복제 (git clone)
    <!-- git clone https://github.com/username/repository.git -->
    원격 저장소의 URL을 사용하여 로컬에 복제합니다.
+   --depth <n>: 특정 깊이의 커밋만 복제 (부분 클론)
+      <!-- git clone --depth 1 https://github.com/example/repo.git -->
 
 
-   3. 변경 사항 스테이징 (git add)
-   <!--
+
+      3. 변경 사항 스테이징 (git add)
+      <!--
    git add index.html
    git add . 
    -->
-   git add .은 현재 디렉토리의 모든 변경 사항을 스테이징 영역에 추가합니다.
+      git add .은 현재 디렉토리의 모든 변경 사항을 스테이징 영역에 추가합니다.
 
 
-   4. 변경 사항 커밋 (git commit)
-   기능: 스테이징된 변경 사항을 커밋하여 저장소에 기록
-   <!-- git commit -m "Add new feature"  -->
-   -m 옵션은 커밋 메시지를 작성할 때 사용합니다.
+
+      4. 변경 사항 커밋 (git commit)
+      기능: 스테이징된 변경 사항을 커밋하여 저장소에 기록
+      <!-- git commit -m "Add new feature"  -->
+      -m 옵션은 커밋 메시지를 작성할 때 사용합니다.
 
 
-   5. 커밋 이력 확인 (git log)
-   git log
-   이 명령어는 커밋 이력을 시간 순으로 나열합니다.
+      5. 커밋 이력 확인 (git log)
+      git log
+      이 명령어는 커밋 이력을 시간 순으로 나열합니다.
 
 
-   6. 변경 사항 되돌리기 (git checkout) ; 특정 브랜치로 전환하거나 변경된 파일을 이전 상태로 되돌림
-   <!-- 
+      6. 변경 사항 되돌리기 (git checkout) ; 특정 브랜치로 전환하거나 변경된 파일을 이전 상태로 되돌림
+      <!-- 
    git checkout main
    git checkout -- index.html
    
@@ -95,8 +118,8 @@
       -->
 
 
-   7. 브랜치 관리 (git branch)
-   <!-- 
+      7. 브랜치 관리 (git branch)
+      <!-- 
    * 구조
    git branch
    git branch <branch_name>
@@ -112,8 +135,8 @@
    -->
 
 
-   8. 원격 저장소와 연동 (git remote)
-   <!-- 
+      8. 원격 저장소와 연동 (git remote)
+      <!-- 
    * 구조
    git remote add <name> <repository_url>
    git remote -v
@@ -131,32 +154,33 @@
 -->
 
 
-   9. 상태 확인 (git status)
-   <!-- git status  -->
-   이 명령어는 현재 작업 중인 파일의 상태(변경된 파일, 스테이징된 파일 등)를 출력합니다.
+      9. 상태 확인 (git status)
+      <!-- git status  -->
+      이 명령어는 현재 작업 중인 파일의 상태(변경된 파일, 스테이징된 파일 등)를 출력합니다.
 
 
 
-   <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
-   <h2>3. 기본 옵션 및 유용한 도구들 (옵션의 영역)</h2>
-   1. -m (커밋 메시지)
-   용도: git commit 시 메시지를 바로 지정합니다.
-   <!-- git commit -m "Fix bug in login functionality" -->
+      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+      <h2>3. 기본 옵션 및 유용한 도구들 (옵션의 영역)</h2>햣
+      1. -m (커밋 메시지)
+      용도: git commit 시 메시지를 바로 지정합니다.
+      <!-- git commit -m "Fix bug in login functionality" -->
 
-   2. -a (자동 스테이징)
-   용도: 변경된 모든 파일을 자동으로 스테이징 후 커밋합니다.
-   <!-- git commit -a -m "Update all files" -->
+      2. -a (자동 스테이징)
+      용도: 변경된 모든 파일을 자동으로 스테이징 후 커밋합니다.
+      썼던거 또 쓰기 귀찮을 때.
+      <!-- git commit -a -m "Update all files" -->
 
-   3. --amend (커밋 수정)
-   용도: 가장 최근 커밋을 수정합니다.
-   git commit --amend
+      3. --amend (커밋 수정)
+      용도: 가장 최근 커밋을 수정합니다.
+      git commit --amend
 
-   4. -v (원격 저장소 확인)
-   용도: 원격 저장소의 정보를 상세히 확인합니다.
-   git remote -v
+      4. -v (원격 저장소 확인)
+      용도: 원격 저장소의 정보를 상세히 확인합니다.
+      git remote -v
 
 
-   <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+      <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
 
 </body>
 
