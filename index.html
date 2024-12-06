@@ -10,7 +10,6 @@
 <body>
    <h1>git 시작</h1>
 
-   a
    <ul>
       <a
          href="https://inpa.tistory.com/entry/GIT-%E2%9A%A1%EF%B8%8F-%EA%B0%9C%EB%85%90-%EC%9B%90%EB%A6%AC-%EC%89%BD%EA%B2%8C%EC%9D%B4%ED%95%B4">설명하는
@@ -21,28 +20,140 @@
       <li>git init: 프로젝트 깃저장소 생성</li>
       <li></li>
    </ul>
-   <!-- 
-   Checkout
-이전 버젼 작업을 불러오는것.
-Staging Area
-저장소에 커밋하기 전에 커밋을 준비하는 위치.
-예를 들어 작업 트리에서 10개의 파일을 수정했는데 4개의 파일만 버전으로 만들려면 4개의 파일만 스테이지로 넘겨주면 된다. 즉, 로컬 스테이지에 올려둔 파일만 원격 저장소에 커밋할 자격이 있는 것이다.
- 
-Commit
-현재 변경된 작업 상태를 점검을 마치면 확정하고 저장소에 저장하는 작업.
-Head
-현재 작업중인 Branch를 가리킨다.
-Branch
-가지 또는 분기점을 의미하며, 작업을 할때에 현재 상태를 복사하여 Branch에서 작업을 한 후에 완전하다 싶을때 Merge를 하여 작업을 한다.
- 
-Merge
-다른 Branch의 내용을 현재 Branch로 가져와 합치는 작업을 의미한다.
 
--->
+   <h2>기본 용어 개념</h2>
+
+   Checkout
+   이전 버젼 작업을 불러오는것.
+   Staging Area
+   저장소에 커밋하기 전에 커밋을 준비하는 위치.
+   예를 들어 작업 트리에서 10개의 파일을 수정했는데 4개의 파일만 버전으로 만들려면 4개의 파일만 스테이지로 넘겨주면 된다. 즉, 로컬 스테이지에 올려둔 파일만 원격 저장소에 커밋할 자격이 있는 것이다.
+   Commit
+   현재 변경된 작업 상태를 점검을 마치면 확정하고 저장소에 저장하는 작업.
+   Head
+   현재 작업중인 Branch를 가리킨다.
+   Branch
+   가지 또는 분기점을 의미하며, 작업을 할때에 현재 상태를 복사하여 Branch에서 작업을 한 후에 완전하다 싶을때 Merge를 하여 작업을 한다.
+   Merge
+   다른 Branch의 내용을 현재 Branch로 가져와 합치는 작업을 의미한다.
+
+
+   Git 명령어 기본 구조
+   <!--
+      git <command> [options] [arguments] 
+            git: Git 명령어 실행
+            <command>: 실행하려는 Git 작업 (예: init, clone, commit 등)
+            [options]: 명령어의 동작을 제어하는 옵션 (예: -m, -a 등)
+            [arguments]: 명령어에 대한 추가 정보나 대상 (예: 파일 경로, 메시지 등)
+      -->
+
 
    <h2>gitdml 추적(track)과 저장소 저장(commit)</h2>
    <div></div>
 
+
+   <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+   <h2>기본 문법과 예시; command의 영역</h2>
+
+
+   1. Git 저장소 초기화 (git init) ; 현재 디렉터리를 Git 저장소로 초기화
+   <!-- git init -->
+   이 명령어는 현재 디렉토리에 .git이라는 숨김 폴더를 생성하여 Git 저장소로 설정합니다.
+
+
+   2. Git 저장소 복제 (git clone)
+   <!-- git clone https://github.com/username/repository.git -->
+   원격 저장소의 URL을 사용하여 로컬에 복제합니다.
+
+
+   3. 변경 사항 스테이징 (git add)
+   <!--
+   git add index.html
+   git add . 
+   -->
+   git add .은 현재 디렉토리의 모든 변경 사항을 스테이징 영역에 추가합니다.
+
+
+   4. 변경 사항 커밋 (git commit)
+   기능: 스테이징된 변경 사항을 커밋하여 저장소에 기록
+   <!-- git commit -m "Add new feature"  -->
+   -m 옵션은 커밋 메시지를 작성할 때 사용합니다.
+
+
+   5. 커밋 이력 확인 (git log)
+   git log
+   이 명령어는 커밋 이력을 시간 순으로 나열합니다.
+
+
+   6. 변경 사항 되돌리기 (git checkout) ; 특정 브랜치로 전환하거나 변경된 파일을 이전 상태로 되돌림
+   <!-- 
+   git checkout main
+   git checkout -- index.html
+   
+   git checkout <branch>는 다른 브랜치로 전환합니다.
+   git checkout -- <file>은 특정 파일의 변경 사항을 되돌립니다.
+      -->
+
+
+   7. 브랜치 관리 (git branch)
+   <!-- 
+   * 구조
+   git branch
+   git branch <branch_name>
+   git branch -d <branch_name>
+   * 예시
+   git branch
+   git branch feature-login
+   git branch -d feature-login
+   * 설명
+   git branch는 현재 존재하는 브랜치 목록을 출력합니다.
+   git branch <branch_name>은 새 브랜치를 만듭니다.
+   git branch -d <branch_name>은 로컬에서 브랜치를 삭제합니다.
+   -->
+
+
+   8. 원격 저장소와 연동 (git remote)
+   <!-- 
+   * 구조
+   git remote add <name> <repository_url>
+   git remote -v
+   git push <remote> <branch>
+   git pull <remote> <branch>
+   * 예시
+   git remote add origin https://github.com/username/repository.git
+   git remote -v
+   git push origin main
+   git pull origin main
+   * 설명
+   git remote add는 원격 저장소를 추가합니다.
+   git push는 로컬 브랜치의 변경 사항을 원격 저장소에 푸시합니다.
+   git pull은 원격 저장소의 변경 사항을 로컬로 가져옵니다.   
+-->
+
+
+   9. 상태 확인 (git status)
+   <!-- git status  -->
+   이 명령어는 현재 작업 중인 파일의 상태(변경된 파일, 스테이징된 파일 등)를 출력합니다.
+
+
+
+   <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+   <h2>3. 기본 옵션 및 유용한 도구들 (옵션의 영역)</h2>
+   1. -m (커밋 메시지)
+   용도: git commit 시 메시지를 바로 지정합니다.
+   <!-- git commit -m "Fix bug in login functionality" -->
+
+   2. -a (자동 스테이징)
+   용도: 변경된 모든 파일을 자동으로 스테이징 후 커밋합니다.
+   <!-- git commit -a -m "Update all files" -->
+
+   3. --amend (커밋 수정)
+   용도: 가장 최근 커밋을 수정합니다.
+   git commit --amend
+
+   4. -v (원격 저장소 확인)
+   용도: 원격 저장소의 정보를 상세히 확인합니다.
+   git remote -v
 
 </body>
 
