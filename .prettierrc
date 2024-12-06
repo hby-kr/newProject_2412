@@ -15,12 +15,4 @@
    "rangeEnd": Infinity, // 포맷팅 부분 적용할 파일의 끝 라인 지정,
    "requirePragma": false, // 파일 상단에 미리 정의된 주석을 작성하고 Pragma로 포맷팅 사용 여부 지정
    "insertPragma": false, // 미리 정의된 @format marker의 사용 여부 (v1.8.0)
-   "overrides": [
-      {
-         "files": "*.json",
-         "options": {
-            "printWidth": 200
-         }
-      }
-   ], // 특정 파일별로 옵션을 다르게 지정함, ESLint 방식 사용
 }
