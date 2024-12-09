@@ -14,31 +14,75 @@
       <a
          href="https://inpa.tistory.com/entry/GIT-%E2%9A%A1%EF%B8%8F-%EA%B0%9C%EB%85%90-%EC%9B%90%EB%A6%AC-%EC%89%BD%EA%B2%8C%EC%9D%B4%ED%95%B4">설명하는
          블로그</a>
-      <li>git : 버전관리 시스템</li>
-      <li>분산 버전관리 시스템</li>
+      <a href="https://sirobako.co.kr/detail/123">설명하는
+         블로그2</a>
+
+      <li>git : 버전관리 시스템 (Version Control System, VCS)</li>
+      <!-- 프로젝트의 모든 변경 사항을 추적하고 관리하는 데 사용. 이를 통해 여러 개발자가 동시에 작업하거나 특정 시점의 프로젝트 상태로 돌아갈 수 있다.
+       -->
+      <li>분산 버전 관리 시스템 (Distributed VCS)</li>
+      <!-- GIT은 중앙 서버 없이 여러 지역 레포지토리(Repository)에서 작업을 수행할 수 있는 분산 시스템이다. 각 개발자는 전체 레포지토리를 복제하여 로컬에서 작업하고 변경 내용을 다른 개발자와 공유할 수 있다.
+       -->
       <li>git config</li>
       <li>git init: 프로젝트 깃저장소 생성</li>
       <li></li>
    </ul>
 
+   <h4>추천 익힘 순서</h4>
+   <pre>
+
+   >> Git 기본 명령어 학습
+   git init: 새로운 Git 레포지토리 생성
+   git clone: 원격 레포지토리를 로컬로 복제
+   git add: 변경된 파일을 스테이징 영역에 추가
+   git commit: 스테이징 영역의 변경 사항을 커밋
+   git pull: 원격 레포지토리에서 변경 사항 가져오기
+   git push: 로컬 변경 사항을 원격 레포지토리로 푸시
+   git branch: 브랜치 관리
+   git merge: 브랜치 병합
+   git status: 현재 상태 확인
+   git log: 커밋 히스토리 확인 등
+
+
+   >> Git 원격 레포지토리 호스팅 서비스 사용
+   GitHub, GitLab, Bitbucket 등과 같은 Git 호스팅 서비스를 이용하여 원격 레포지토리를 생성하고 관리하는 방법을 학습. 원격 레포지토리를 푸시하고 풀하는 방법을 익힌다.
+
+
+   >> 브랜치와 병합 관리
+   브랜치를 생성하고 관리하는 방법을 학습. 다양한 브랜치 전략을 이해하고 적용. 브랜치 간의 병합과 충돌 해결 방법을 연습.
+
+
+   >> Git 워크플로우 이해
+   Git을 사용하여 팀 프로젝트를 위한 워크플로우를 이해. 기능 브랜치, 개발 브랜치, 메인 브랜치, 릴리스 브랜치 등의 일반적인 워크플로우를 적용하는 방법을 학습
+
+
+   >> Git 고급 주제 학습 (선택 사항)
+   리베이스(Rebase), 서브모듈(Submodule), 필터링, 후크(Hook) 등과 같은 고급 Git 주제를 학습
+
+
+   >> Git GUI 도구 사용 (선택 사항)
+   Git 명령줄 외에도 Git GUI 도구를 사용하여 Git을 관리하는 방법을 학습합니다. 예를 들어, Sourcetree, GitHub Desktop 등
+</pre>
+   <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+
+
    <h2>기본 용어 개념</h2>
-
-   Checkout
-   이전 버젼 작업을 불러오는것.
-   Staging Area
-   저장소에 커밋하기 전에 커밋을 준비하는 위치.
-   예를 들어 작업 트리에서 10개의 파일을 수정했는데 4개의 파일만 버전으로 만들려면 4개의 파일만 스테이지로 넘겨주면 된다. 즉, 로컬 스테이지에 올려둔 파일만 원격 저장소에 커밋할 자격이 있는 것이다.
-   Commit
-   현재 변경된 작업 상태를 점검을 마치면 확정하고 저장소에 저장하는 작업.
-   Head
-   현재 작업중인 Branch를 가리킨다.
-   Branch
-   가지 또는 분기점을 의미하며, 작업을 할때에 현재 상태를 복사하여 Branch에서 작업을 한 후에 완전하다 싶을때 Merge를 하여 작업을 한다.
-   Merge
-   다른 Branch의 내용을 현재 Branch로 가져와 합치는 작업을 의미한다.
+   <ul>
+      <li>Checkout; 이전 버젼 작업을 불러오는것.</li>
+      <li>Staging Area; 저장소에 커밋하기 전에 커밋을 준비하는 위치. <br>
+         예를 들어 작업 트리에서 10개의 파일을 수정했는데 4개의 파일만 버전으로 만들려면 4개의 파일만 스테이지로 넘겨주면 된다. 즉, 로컬 스테이지에 올려둔 파일만 원격 저장소에 커밋할 자격이 있는
+         것이다.</li>
+      <li>Commit; 현재 변경된 작업 상태를 점검을 마치면 확정하고 저장소에 저장하는 작업.</li>
+      <li>Head; 현재 작업중인 Branch를 가리킨다.</li>
+      <li>Branch; 가지 또는 분기점을 의미하며, 작업을 할때에 현재 상태를 복사하여 Branch에서 작업을 한 후에 완전하다 싶을때 Merge를 하여 작업을 한다.</li>
+      <li>Merge; 다른 Branch의 내용을 현재 Branch로 가져와 합치는 작업을 의미한다.</li>
+   </ul>
 
 
-   Git 명령어 기본 구조
+   <h3></h3>Git 명령어 기본 구조
+   <a
+      href="https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EC%99%80-Merge-%EC%9D%98-%EA%B8%B0%EC%B4%88">git
+      공식 book 한글</a>
    <!--
       git <command> [options] [arguments] 
             git: Git 명령어 실행
@@ -47,53 +91,80 @@
             [arguments]: 명령어에 대한 추가 정보나 대상 (예: 파일 경로, 메시지 등)
       -->
 
-   <!-- 
-      git 명령어
-            git init                  : 새로운 Git 저장소 초기화
-            git clone 주소url          : 원격 저장소 복제
-            git add 파일명.txt         : 파일을 스테이징 영역에 추가
-            git commit -m "수정내용"   : 커밋 메시지와 함께 변경 사항 커밋
-         
-            git log                   : 커밋 이력 조회
-            git diff                  : 변경 사항 비교
-            git status                : 현재 상태 확인
-            git push <remote> <branch>: 원격 저장소에 변경 사항 푸시
-            git pull <remote> <branch>: 원격 저장소에서 변경 사항 가져오기
-            git branch                : 브랜치 목록 확인 및 생성
-            git merge <branch>        : 다른 브랜치와 병합
-            git rebase <branch>       : 브랜치의 커밋을 재정렬
-            git reset <commit>        : 커밋 되돌리기
-            git tag <tag>             : 특정 커밋에 태그 추가
-            git echo
-      -->
-   <h2>gitdml 추적(track)과 저장소 저장(commit)</h2>
-   <div></div>
+   <pre>
+      VSCode에서 git추적시 파일 옆에 뜨는 알파벳
+A (Added): 새 파일이 리포지토리에 추가되었습니다.
+M (Modified): 기존의 파일이 수정되었습니다.
+D (Deleted): 파일이 삭제되었습니다.
+U (Untracked): 파일이 새로 추가되었거나 변경되었지만, 아직 Git에 추가되지 않은 상태입니다.
+C (Conflict): 파일에 충돌이 발생했습니다. 주로 병합 중에 발생하며, Git이 자동으로 해결할 수 없는 충돌이 있을 때 나타납니다.
+R (Renamed): 파일의 이름이 변경되었습니다.
+S (Submodule): 리포지토리 안에 다른 서브모듈(즉, 다른 Git 리포지토리)이 존재합니다. 서브모듈은 특정 버전의 리포지토리를 포함하는 Git의 개념입니다.
+</pre>
+
+   <h2></h2>git 명령어
+   <ul>
+      <li>git init : 새로운 Git 저장소 초기화</li>
+      <li>git clone 주소url : 원격 저장소 복제</li>
+      <li>git add 파일명.txt : 파일을 스테이징 영역에 추가</li>
+      <li>git commit -m "수정내용" : 커밋 메시지와 함께 변경 사항 커밋</li>
+      <li>git reset 커밍정보 : 커밋 되돌리기</li>
+      <li>git log : 커밋 이력 조회</li>
+
+      <li>git status : 현재 상태 확인</li>
+      <li>git diff : 변경 사항 비교</li>
+
+      <li>git echo</li>
+      <li>git tag 태그명 : 특정 커밋에 태그 추가</li>
+      <li>git rm 파일명 : 파일 삭제 및 Git에서 추적 중지.</li>
+
+      <li>git branch : 브랜치 목록 확인 및 생성</li>
+      <li>git checkout 브랜치명 : 다른 브랜치로 전환.</li>
+      <li>git merge 브랜치명 : 다른 브랜치와 병합</li>
+      <!--(main이 될 브랜치로 checkout하고 가져와서 병합할 브랜치명을 적는 것) -->
+      <li>git rebase 브랜치명 : 브랜치의 커밋을 재정렬</li>
+      <!-- 10명이 작업한다고 하면, 동시에 일어나는 branch가 10개로 너무 복잡한 트리구조를 가짐.
+         그것을 정리하고 중간 중간에 통합을 하는 것. (인력이 많은 고오급 개발시에 씀)-->
+      <li>git push 저장소명 브랜치명 : 원격 저장소에 변경 사항 푸시</li>
+      <li>git pull 저장소명 브랜치명: 원격 저장소에서 변경 사항 가져오기</li>
+      <li>git fetch : 원격 리포지토리에서 최신 변경 사항을 가져오지만 병합하지 않음.</li>
+      <li>git stash : 작업 중인 내용을 임시로 저장하고 작업 트리 복원.</li>
+   </ul>
 
 
    <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
    <h2>기본 문법과 예시; command의 영역</h2>s
 
-
    1. Git 저장소 초기화 (git init) ; 현재 디렉터리를 Git 저장소로 초기화
-   <!-- git init -->
    이 명령어는 현재 디렉토리에 .git이라는 숨김 폴더를 생성하여 Git 저장소로 설정합니다.
+   <!--
+옵션 없음: git init
+새로운 Git 리포지토리를 초기화합니다.
+git init --bare
+원격 서버용으로 빈 리포지토리(작업할 수 없는 형태)로 초기화합니다. -->
 
 
 
    2. Git 저장소 복제 (git clone)
-   <!-- git clone https://github.com/username/repository.git -->
    원격 저장소의 URL을 사용하여 로컬에 복제합니다.
+   <!-- git clone https://github.com/username/repository.git -->
    --depth <n>: 특정 깊이의 커밋만 복제 (부분 클론)
       <!-- git clone --depth 1 https://github.com/example/repo.git -->
+      리포지토리의 최신 커밋만 복제(깊이 1)합니다.
+      <!-- git clone --single-branch <repository_url> -->
+      지정한 브랜치만 복제합니다.
 
 
 
       3. 변경 사항 스테이징 (git add)
-      <!--
-   git add index.html
-   git add . 
-   -->
+      <!-- git add index.html -->
+      index.html 파일 하나만 스테이징 영역에 올림
+      <!-- git add . -->
       git add .은 현재 디렉토리의 모든 변경 사항을 스테이징 영역에 추가합니다.
+      <!-- git add -A -->
+      -A: 모든 변경 사항(새 파일, 삭제된 파일 등)을 스테이징
+      <!-- git add -u -->
+      -u: 추적된 파일만 추가합니다. 삭제된 파일도 스테이징에 포함됩니다. → 변경된 파일과 삭제된 파일만 스테이징합니다.
 
 
 
@@ -101,42 +172,79 @@
       기능: 스테이징된 변경 사항을 커밋하여 저장소에 기록
       <!-- git commit -m "Add new feature"  -->
       -m 옵션은 커밋 메시지를 작성할 때 사용합니다.
+      <!--
+git commit -m "message"
+메시지를 입력하여 커밋합니다.
+git commit --amend
+최근 커밋을 수정합니다(메시지 또는 내용 수정).
+git commit --no-edit
+커밋 메시지 수정 없이 최근 커밋을 수정합니다
+--no-verify: pre-commit 훅을 건너뛰고 커밋합니다.
+git commit --no-verify
+→ 훅이 있더라도 실행하지 않습니다.
+--dry-run: 실제 커밋하지 않고 어떤 변경 사항이 있을지 확인합니다.
+commit --dry-run
+→ 커밋이 어떻게 될지 미리 확인합니다.
+
+-->
+
 
 
       5. 커밋 이력 확인 (git log)
       git log
       이 명령어는 커밋 이력을 시간 순으로 나열합니다.
+      <!--
+git log --oneline
+   각 커밋을 한 줄로 간략하게 표시합니다.
+git log --graph --oneline --decorate
+   커밋 트리를 그래프 형식으로 한 줄로 표시하며, 태그와 브랜치도 함께 보여줍니다.
+git log --author="author_name"
+   특정 작성자의 커밋만 필터링하여 보여줍니다. -->
+
+
 
 
       6. 변경 사항 되돌리기 (git checkout) ; 특정 브랜치로 전환하거나 변경된 파일을 이전 상태로 되돌림
       <!-- 
-   git checkout main
-   git checkout -- index.html
-   
-   git checkout <branch>는 다른 브랜치로 전환합니다.
-   git checkout -- <file>은 특정 파일의 변경 사항을 되돌립니다.
-      -->
+git checkout main
+   main 브랜치로 전환
+git checkout <commit_id>
+   특정 커밋으로 작업 디렉토리를 되돌립니다.
+git checkout -- <file>
+   파일을 마지막 커밋 상태로 되돌립니다.
+git checkout -b <branch_name>
+   새로운 브랜치를 생성하고 해당 브랜치로 전환합니다.
+git checkout --orphan <new_branch>
+--orphan: 새로운 브랜치를 생성하되, 기존의 커밋과의 연결을 끊습니다.
+→ 새로운 브랜치를 생성하고 기존 브랜치의 이력을 가지지 않도록 합니다.
+git checkout -f
+-f: 강제로 작업 디렉토리를 체크아웃합니다. (변경 사항이 있는 경우 덮어쓰기)
+→ 변경된 내용을 덮어쓰고 강제로 전환합니다.
+-->
+
 
 
       7. 브랜치 관리 (git branch)
       <!-- 
    * 구조
    git branch
-   git branch <branch_name>
-   git branch -d <branch_name>
-   * 예시
    git branch
-   git branch feature-login
-   git branch -d feature-login
-   * 설명
-   git branch는 현재 존재하는 브랜치 목록을 출력합니다.
-   git branch <branch_name>은 새 브랜치를 만듭니다.
-   git branch -d <branch_name>은 로컬에서 브랜치를 삭제합니다.
-   -->
+      는 현재 존재하는 브랜치 목록을 출력합니다.
+
+   git branch <branch_name>
+      git branch <branch_name>은 새 브랜치를 만듭니다.
+
+   git branch -d <branch_name>
+      git branch -d <branch_name>은 로컬에서 브랜치를 삭제합니다.
+         
+     git branch -m <old_name><new_name>
+      브랜치 이름을 변경합니다.
+ -->
 
 
       8. 원격 저장소와 연동 (git remote)
-      <!-- 
+
+      <!--       
    * 구조
    git remote add <name> <repository_url>
    git remote -v
@@ -154,10 +262,103 @@
 -->
 
 
-      9. 상태 확인 (git status)
-      <!-- git status  -->
-      이 명령어는 현재 작업 중인 파일의 상태(변경된 파일, 스테이징된 파일 등)를 출력합니다.
+      >>> git status
+      이 명령어는 현재 작업 중인 파일의 상태(변경된 파일, 스테이징된 파일 등)를 출력합니다.<!-- 
+git status  
+git status -s
+간단한 상태 요약을 출력합니다.
+-v: 기본적으로 자세한 상태를 출력합니다. (간단한 상태 -s 옵션과 대비)
+예: git status -v
+→ 상태가 자세히 출력됩니다.
 
+-u: 추적되지 않은 파일의 표시 방법을 제어합니다
+예: git status -uall
+→ 추적되지 않은 파일도 모두 표시합니다.
+예: git status -uno
+→ 추적되지 않은 파일은 표시하지 않습니다.. -->
+
+      >>> git diff <!--
+git diff --staged
+스테이징 영역과 마지막 커밋 사이의 차이를 표시합니다.
+git diff <commit_id>
+특정 커밋과 현재 작업 디렉토리 간의 차이를 표시합니다.
+git diff --color-words
+변경된 부분을 단어 단위로 색상으로 강조합니다. -->
+
+      >>>git merge <!-- 
+git merge --no-ff <branch_name>
+fast-forward 병합을 사용하지 않고 병합 커밋을 생성합니다.
+git merge --squash <branch_name>
+병합을 하나의 커밋으로 압축하여 처리합니다. -->
+
+      <!-- Fast-forward 병합
+브랜치가 한 라인의 커밋을 작업하고 있을 때,
+최종 버전으로 이동하는 것이 fast-forward 병합 -->
+
+      >>> git pull<!--
+git pull --rebase
+병합 대신 rebase를 사용하여 로컬 변경 사항을 원격 변경 사항 위에 적용합니다.
+git pull --no-commit
+병합 후 자동 커밋을 하지 않도록 합니다. -->
+
+      >>> git push
+      <!-- 
+git push origin <branch_name>
+지정된 브랜치를 원격 리포지토리에 푸시합니다.
+git push --force
+강제로 푸시하여 원격 리포지토리를 덮어씁니다 (주의).
+git push --set-upstream origin <branch_name>
+로컬 브랜치와 원격 브랜치를 연결합니다. -->
+
+      >>> git remote add<!--
+git remote add origin <repository_url>
+원격 리포지토리 origin을 추가합니다.
+git remote -v
+원격 리포지토리 목록을 표시합니다. -->
+
+      >>> git fetch <!-- 
+git fetch --all
+모든 원격 리포지토리에서 데이터를 가져옵니다.
+git fetch origin <branch_name>
+지정된 브랜치만 원격에서 가져옵니다. -->
+
+      >>> git reset<!-- 
+git reset --soft <commit>
+커밋을 되돌리지만 변경 사항은 유지합니다.
+git reset --hard <commit>
+커밋과 함께 작업 디렉토리도 완전히 되돌립니다.
+git reset --mixed <commit>
+커밋을 되돌리며, 변경 사항은 스테이징 영역에 그대로 둡니다. -->
+
+      >>> git rm<!--
+git rm -r <directory>
+디렉토리와 그 안의 모든 파일을 삭제하고 Git에서 추적하지 않도록 합니다.
+git rm --cached <file>
+파일을 삭제하지만 로컬 파일은 그대로 두고 Git에서만 추적을 중지합니다. -->
+
+      >>> git stash<!-- 
+git stash save "message"
+현재 변경 사항을 임시로 저장하고 메시지를 추가합니다.
+git stash pop
+최근에 저장한 스태시를 꺼내어 작업 디렉토리에 적용합니다.
+git stash list
+저장된 모든 스태시를 나열합니다. -->
+
+      >>> git rebase<!-- 
+git rebase -i <commit>
+상호작용 모드로 리베이스를 진행하여 커밋을 수정하거나 합칩니다.
+git rebase --continue
+충돌을 해결한 후 리베이스를 계속합니다.
+git rebase --abort
+리베이스 작업을 취소하고 원래 상태로 되돌립니다. -->
+
+      >>> git tag<!-- 
+git tag <tag_name>
+현재 커밋에 태그를 추가합니다.
+git tag -a <tag_name> -m "message"
+주석이 포함된 태그를 추가합니다.
+git tag -d <tag_name>
+특정 태그를 삭제합니다.  -->
 
 
       <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
