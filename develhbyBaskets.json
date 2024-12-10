@@ -1,0 +1,26 @@
+{
+  "user_id": "develhby",
+  "baskets": [
+    {
+      "num": 6,
+      "title": "프레지덩 버터 450g",
+      "cnt": 5,
+      "price": 9900,
+      "total": 49500
+    },
+    {
+      "num": 4,
+      "title": "통마늘 600g",
+      "cnt": 2,
+      "price": 6000,
+      "total": 12000
+    },
+    {
+      "num": 2,
+      "title": "레지아노치즈",
+      "cnt": 4,
+      "price": 12000,
+      "total": 48000
+    }
+  ]
+}

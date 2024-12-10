@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="index.css">
+   <script src="app.js" defer></script>
+
+   <title>프로젝트</title>
+</head>
+
+<body>
+
+   <header>
+
+      <button id="loadProductsBtn" type="button">불러오기</button>
+      <h1>프로젝트</h1>
+      <div id="userInfo">
+         <div id="userImg">sdfsff</div>
+      </div>
+
+   </header>
+
+
+   <ul id="productList">
+      <li id="productEx">
+         <div>
+            <img class="img" src="" alt="">
+         </div>
+         <form name="a" action="#" class="basketForm">
+            <h4 class="title"></h4>
+            <p><span class="price"></span>원</p>
+            <p>
+               <label>수량 :
+                  <input name="cnt" type="number" min="1" max="10" value="1">
+               </label>
+            </p>
+            <p>
+               <input type="hidden" name="num" value="">
+               <input type="hidden" name="title" value="">
+               <input type="hidden" name="price" value="">
+               <button type="submit">장바구니</button>
+               <button type="button">바로구매</button>
+            </p>
+         </form>
+      </li>
+   </ul>
+
+
+
+   <div id="selectedList">
+      <h4>
+         장바구니 목록
+         <button id="moveSelectedList">접기</button>
+         <button id="loadBasketsBtn">출력</button>
+      </h4>
+      <table id="resultTable">
+         <thead>
+            <tr>
+               <th>번호</th>
+               <th>이름</th>
+               <th>가격</th>
+               <th>수량</th>
+               <th>총가격</th>
+               <th>삭제</th>
+            </tr>
+         </thead>
+         <style>
+            #basketEx {
+               display: none;
+            }
+         </style>
+         <tbody id="basketCont">
+            <tr id="basketEx">
+               <td class="num"></td>
+               <td class="title"></td>
+               <td class="price"></td>
+               <td class="cnt"></td>
+               <td class="total"></td>
+               <td>
+                  <button class="delBtn" data-num="">삭제</button>
+               </td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <td colspan="6">전체가격 :
+                  <b id="totalPriceB">0</b>
+               </td>
+            </tr>
+         </tfoot>
+      </table>
+   </div>
+
+
+</body>
+
+</html>
